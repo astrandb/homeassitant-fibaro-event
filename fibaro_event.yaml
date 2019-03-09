@@ -1,0 +1,11 @@
+- alias: FibaroEventSingleClickDevice291
+  trigger:
+    platform: event
+    event_type: fibaro_sceneactivation
+    event_data:
+      scene_activation: 26
+      device_id: 291
+  action:
+    service: homeassistant.toggle
+    entity_id: group.gardenlights
+
