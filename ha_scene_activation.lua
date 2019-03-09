@@ -9,9 +9,9 @@
 -- Send sceneActivation to Homeassistant Event
 -- By astrandb, 2019
 
-local ha_host='192.168.0.18';
+local ha_host='192.168.yyy.xxx';
 local ha_port='8123';
-local ha_token='** Get a longlife token from homeassistant and place it here';
+local ha_token='** Get a longlife token from homeassistant and place it here **';
 
 local http = net.HTTPClient();
 local requestHeaders = {
@@ -37,7 +37,7 @@ end
 
 requestData = {scene_activation = sceneActivation, device_id = deviceID};
 local requestBody = json.encode(requestData);
-local url = 'http:' .. ha_host .. ':' .. ha_port .. '/api/events/fibaro_sceneactivation';
+local url = 'http://' .. ha_host .. ':' .. ha_port .. '/api/events/fibaro_sceneactivation';
 http:request(url,
                { options= {headers = requestHeaders,
                            data = requestBody,
